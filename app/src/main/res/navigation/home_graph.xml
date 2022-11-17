@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_graph"
+    app:startDestination="@id/dashboardFragment">
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.dialogy.studio.shoplistv2.home.dashboard.DashboardFragment"
+        android:label="DashboardFragment" />
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.dialogy.studio.shoplistv2.home.list.presentation.ListFragment"
+        android:label="ListFragment" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.dialogy.studio.shoplistv2.home.profile.ProfileFragment"
+        android:label="ProfileFragment" />
+</navigation>

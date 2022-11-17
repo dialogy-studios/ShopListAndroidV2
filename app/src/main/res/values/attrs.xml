@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="HorizontalProductList">
+        <attr name="product_name" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="VerticalCategoryList">
+        <attr name="category_name" format="string" />
+    </declare-styleable>
+</resources>
