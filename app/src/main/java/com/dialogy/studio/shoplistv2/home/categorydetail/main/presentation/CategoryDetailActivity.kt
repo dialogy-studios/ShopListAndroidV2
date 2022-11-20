@@ -1,4 +1,4 @@
-package com.dialogy.studio.shoplistv2.home.categorydetail.presentation
+package com.dialogy.studio.shoplistv2.home.categorydetail.main.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

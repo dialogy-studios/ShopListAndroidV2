@@ -1,6 +1,7 @@
 {
   "category_list": [
     {
+      "id": 1,
       "name": "Marcenaria",
       "product_list": [
         {
@@ -83,6 +84,7 @@
       ]
     },
     {
+      "id": 2,
       "name": "Padaria",
       "product_list": [
         {
@@ -143,6 +145,7 @@
       ]
     },
     {
+      "id": 3,
       "name": "Hortifruti",
       "product_list": [
         {
@@ -188,6 +191,7 @@
       ]
     },
     {
+      "id": 4,
       "name": "Refrigerante",
       "product_list": [
         {

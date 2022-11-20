@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/category_detail_graph"
+    app:startDestination="@id/categoryProductListFragment">
+
+    <fragment
+        android:id="@+id/categoryProductListFragment"
+        android:name="com.dialogy.studio.shoplistv2.home.categorydetail.productlist.presentation.CategoryProductListFragment"
+        android:label="CategoryProductListFragment" />
+</navigation>

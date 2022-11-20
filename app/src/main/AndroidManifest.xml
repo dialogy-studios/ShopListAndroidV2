@@ -59,7 +59,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".home.categorydetail.presentation.CategoryDetailActivity"
+            android:name=".home.categorydetail.main.presentation.CategoryDetailActivity"
             android:exported="true"
             android:theme="@style/Theme.Material3.Light.NoActionBar"
             >
@@ -72,7 +72,6 @@
                     android:host="@string/category_detail_host"
                     />
             </intent-filter>
-
         </activity>
     </application>
 

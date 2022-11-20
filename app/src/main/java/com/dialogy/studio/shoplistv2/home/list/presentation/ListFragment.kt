@@ -71,7 +71,7 @@ class ListFragment : Fragment() {
                     override val seeMore: IButtonListener
                         get() = object : IButtonListener {
                             override fun onClick() {
-                                DeeplinkConstants.EMIT_CATEGORY_DETAIL_PRODUCTS_DEEPLINK(
+                                DeeplinkConstants.CATEGORY_DETAIL.emit(
                                     context = requireContext(),
                                     categoryId = it.id
                                 )

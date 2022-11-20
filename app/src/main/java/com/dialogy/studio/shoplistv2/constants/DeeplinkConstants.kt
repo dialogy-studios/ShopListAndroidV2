@@ -8,7 +8,13 @@ import com.dialogy.studio.shoplistv2.R
 
 object DeeplinkConstants {
     fun SCHEME(context: Context) = context.getString(R.string.app_scheme)
-    fun EMIT_CATEGORY_DETAIL_PRODUCTS_DEEPLINK(context: Context, categoryId: String) = emitDeeplink(context, "${SCHEME(context)}://category_detail/${categoryId}")
+
+    object CATEGORY_DETAIL {
+        fun emit(context: Context, categoryId: String) = emitDeeplink(context, "${SCHEME(context)}://category_detail?${QueryParam.CATEGORY_ID.id}=${categoryId}")
+        enum class QueryParam(val id: String) {
+            CATEGORY_ID("category-id")
+        }
+    }
     private fun emitDeeplink(context: Context, deeplink: String) {
         startActivity(
             context,
