@@ -11,5 +11,8 @@ class CategoryProductVH(
     fun bind(vo: CategoryProductVO) {
         val context = binding.root.context
         Glide.with(context).load(vo.thumb).into(binding.thumb)
+        binding.thumb.setOnClickListener {
+            vo.listener?.thumb?.onClick()
+        }
     }
 }

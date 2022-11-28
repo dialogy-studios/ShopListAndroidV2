@@ -15,6 +15,13 @@
         android:icon="@drawable/outline_menu_24"
         app:showAsAction="always"
         />
+
+    <item
+        android:id="@id/myListFragment"
+        android:title="Minhas listas"
+        android:icon="@drawable/outline_menu_24"
+        app:showAsAction="always"
+        />
     <item
         android:id="@id/profileFragment"
         android:title="Perfil"

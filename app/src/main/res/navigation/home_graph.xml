@@ -16,4 +16,8 @@
         android:id="@+id/profileFragment"
         android:name="com.dialogy.studio.shoplistv2.home.profile.ProfileFragment"
         android:label="ProfileFragment" />
+    <fragment
+        android:id="@+id/myListFragment"
+        android:name="com.dialogy.studio.shoplistv2.home.checklist.presentation.CheckListFragment"
+        android:label="MyListFragment" />
 </navigation>

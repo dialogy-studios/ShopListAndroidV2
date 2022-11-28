@@ -3,6 +3,7 @@
     <string name="app_scheme">shoplist</string>
     <string name="authentication_deeplink">authentication</string>
     <string name="home_deeplink">home</string>
+    <string name="check_list_detail_deeplink">check_list_detail</string>
     <string name="category_detail_host">category_detail</string>
     <string name="see_more_products">Ver mais</string>
 </resources>

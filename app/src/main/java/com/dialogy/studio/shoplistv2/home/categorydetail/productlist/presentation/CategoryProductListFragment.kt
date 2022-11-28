@@ -9,6 +9,9 @@ import androidx.fragment.app.viewModels
 import com.dialogy.studio.shoplistv2.constants.DeeplinkConstants
 import com.dialogy.studio.shoplistv2.databinding.CategoryProductListFragmentBinding
 import com.dialogy.studio.shoplistv2.home.categorydetail.productlist.presentation.component.list.CategoryProductListRVAdapter
+import com.dialogy.studio.shoplistv2.home.categorydetail.productlist.presentation.component.list.model.ICategoryProductListener
+import com.dialogy.studio.shoplistv2.listener.IButtonListener
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -63,7 +66,22 @@ class CategoryProductListFragment : Fragment() {
     }
 
     private fun handleUISuccessState(state: CategoryProductListViewModel.CategoryProductListState.UI.Success) {
-        binding?.productListRecyclerView?.adapter = CategoryProductListRVAdapter(state.vo.productList)
+        state.vo.copy(id= state.vo.id, productList= state.vo.productList.map {
+            it.copy(listener = object : ICategoryProductListener {
+                override val thumb: IButtonListener
+                    get() = object : IButtonListener {
+                        override fun onClick() {
+                            binding?.root?.let { view ->
+                                Snackbar.make(view, "Clicked on thumb!", Snackbar.LENGTH_LONG).show()
+                            }
+                        }
+                    }
+
+            })
+        })
+            .apply {
+                binding?.productListRecyclerView?.adapter = CategoryProductListRVAdapter(productList)
+            }
     }
 
     private fun handleUILoadingState(state: CategoryProductListViewModel.CategoryProductListState.UI.Loading) {

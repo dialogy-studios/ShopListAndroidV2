@@ -15,6 +15,13 @@ object DeeplinkConstants {
             CATEGORY_ID("category-id")
         }
     }
+
+    object CHECK_LIST_DETAIL {
+        fun emit(context: Context, checkListId: String) = emitDeeplink(context, "${SCHEME(context)}://check_list_detail?${QueryParam.CHECK_LIST_ID.id}=${checkListId}")
+        enum class QueryParam(val id: String) {
+            CHECK_LIST_ID("check-list-id")
+        }
+    }
     private fun emitDeeplink(context: Context, deeplink: String) {
         startActivity(
             context,
