@@ -3,12 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/main_nav_container"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/selected_products_checker"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:name="androidx.navigation.fragment.NavHostFragment"
-        app:defaultNavHost="true"
-        app:navGraph="@navigation/check_list_detail_graph"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>
