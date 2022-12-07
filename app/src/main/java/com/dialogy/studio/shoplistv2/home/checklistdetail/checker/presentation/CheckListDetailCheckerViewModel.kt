@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dialogy.studio.shoplistv2.home.checklistdetail.checker.domain.ICheckListDetailCheckerInteractor
 import com.dialogy.studio.shoplistv2.home.checklistdetail.checker.presentation.components.selectedproductsrv.model.CheckListDetailCheckerVO
+import com.dialogy.studio.shoplistv2.home.checklistdetail.checker.presentation.model.CheckListDetailCheckerScreenVO
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.launchIn
@@ -38,7 +39,7 @@ class CheckListDetailCheckerViewModel @Inject constructor(
 
     sealed class State {
         sealed class UI : State() {
-            data class Success(val vo: List<CheckListDetailCheckerVO>): UI()
+            data class Success(val vo: CheckListDetailCheckerScreenVO): UI()
             object Loading: UI()
             data class Error(val error: Throwable): UI()
         }

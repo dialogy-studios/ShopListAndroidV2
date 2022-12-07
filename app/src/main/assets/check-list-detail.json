@@ -2,61 +2,82 @@
   {
     "isChecked": false,
     "productName": "Colgate",
-    "productPrice": "R$ 10",
+    "productPrice": {
+      "value": 10,
+      "factor": 1
+    },
     "thumb": "https://cf.shopee.com.br/file/2189f0100e6c5ef0b281294d7c52547c"
   },
   {
     "isChecked": false,
     "productName": "Colgate",
-    "productPrice": "R$ 10",
+    "productPrice": {
+      "value": 10,
+      "factor": 1
+    },
     "thumb": "https://cf.shopee.com.br/file/2189f0100e6c5ef0b281294d7c52547c"
   },
   {
     "isChecked": false,
     "productName": "Colgate",
-    "productPrice": "R$ 10",
-    "thumb": "https://cf.shopee.com.br/file/2189f0100e6c5ef0b281294d7c52547c"
-  },
-  {
-    "isChecked": true,
-    "productName": "Colgate",
-    "productPrice": "R$ 10",
-    "thumb": "https://cf.shopee.com.br/file/2189f0100e6c5ef0b281294d7c52547c"
-  },
-  {
-    "isChecked": false,
-    "productName": "Colgate",
-    "productPrice": "R$ 10",
-    "thumb": "https://cf.shopee.com.br/file/2189f0100e6c5ef0b281294d7c52547c"
-  },
-  {
-    "isChecked": true,
-    "productName": "Colgate",
-    "productPrice": "R$ 10",
+    "productPrice": {
+      "value": 10,
+      "factor": 1
+    },
     "thumb": "https://cf.shopee.com.br/file/2189f0100e6c5ef0b281294d7c52547c"
   },
   {
     "isChecked": false,
     "productName": "Colgate",
-    "productPrice": "R$ 10",
-    "thumb": "https://cf.shopee.com.br/file/2189f0100e6c5ef0b281294d7c52547c"
-  },
-  {
-    "isChecked": true,
-    "productName": "Colgate",
-    "productPrice": "R$ 10",
-    "thumb": "https://cf.shopee.com.br/file/2189f0100e6c5ef0b281294d7c52547c"
-  },
-  {
-    "isChecked": false,
-    "productName": "Colgate",
-    "productPrice": "R$ 10",
+    "productPrice": {
+      "value": 10,
+      "factor": 1
+    },
     "thumb": "https://cf.shopee.com.br/file/2189f0100e6c5ef0b281294d7c52547c"
   },
   {
     "isChecked": false,
     "productName": "Colgate",
-    "productPrice": "R$ 10",
+    "productPrice": {
+      "value": 10,
+      "factor": 1
+    },
+    "thumb": "https://cf.shopee.com.br/file/2189f0100e6c5ef0b281294d7c52547c"
+  },
+  {
+    "isChecked": false,
+    "productName": "Colgate",
+    "productPrice": {
+      "value": 10,
+      "factor": 1
+    },
+    "thumb": "https://cf.shopee.com.br/file/2189f0100e6c5ef0b281294d7c52547c"
+  },
+  {
+    "isChecked": false,
+    "productName": "Colgate",
+    "productPrice": {
+      "value": 10,
+      "factor": 1
+    },
+    "thumb": "https://cf.shopee.com.br/file/2189f0100e6c5ef0b281294d7c52547c"
+  },
+  {
+    "isChecked": false,
+    "productName": "Colgate",
+    "productPrice": {
+      "value": 10,
+      "factor": 1
+    },
+    "thumb": "https://cf.shopee.com.br/file/2189f0100e6c5ef0b281294d7c52547c"
+  },
+  {
+    "isChecked": false,
+    "productName": "Colgate",
+    "productPrice": {
+      "value": 10,
+      "factor": 1
+    },
     "thumb": "https://cf.shopee.com.br/file/2189f0100e6c5ef0b281294d7c52547c"
   }
 ]
