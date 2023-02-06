@@ -7,20 +7,24 @@ import androidx.core.net.toUri
 import com.dialogy.studio.shoplistv2.R
 
 object DeeplinkConstants {
-    fun SCHEME(context: Context) = context.getString(R.string.app_scheme)
+    fun getScheme(context: Context) = context.getString(R.string.app_scheme)
 
     object CATEGORY_DETAIL {
-        fun emit(context: Context, categoryId: String) = emitDeeplink(context, "${SCHEME(context)}://category_detail?${QueryParam.CATEGORY_ID.id}=${categoryId}")
+        fun emit(context: Context, categoryId: String) = emitDeeplink(context, "${getScheme(context)}://category_detail?${QueryParam.CATEGORY_ID.id}=${categoryId}")
         enum class QueryParam(val id: String) {
             CATEGORY_ID("category-id")
         }
     }
 
     object CHECK_LIST_DETAIL {
-        fun emit(context: Context, checkListId: String) = emitDeeplink(context, "${SCHEME(context)}://check_list_detail?${QueryParam.CHECK_LIST_ID.id}=${checkListId}")
+        fun emit(context: Context, checkListId: String) = emitDeeplink(context, "${getScheme(context)}://check_list_detail?${QueryParam.CHECK_LIST_ID.id}=${checkListId}")
         enum class QueryParam(val id: String) {
             CHECK_LIST_ID("check-list-id")
         }
+    }
+
+    object HOME {
+        fun emit(context: Context) = emitDeeplink(context, "${getScheme(context)}://home")
     }
     private fun emitDeeplink(context: Context, deeplink: String) {
         startActivity(

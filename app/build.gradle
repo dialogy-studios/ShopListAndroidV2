@@ -72,10 +72,7 @@ dependencies {
     // Dependency Injection
     implementation "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-compiler:$hilt_version"
-
-    // Android
-    implementation "androidx.core:core-ktx:$ktx_extension_version"
-
+    kapt "org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.5.0"
 
     // The following line is optional, as the core library is included indirectly by camera-camera2
     implementation "androidx.camera:camera-core:${camerax_version}"
@@ -120,7 +117,6 @@ dependencies {
 
     // MockP Interceptor
     implementation 'com.github.brunogabriel.mockp-interceptor:library:0.0.1'
-    implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation "com.google.android.material:material:$material_version"
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'

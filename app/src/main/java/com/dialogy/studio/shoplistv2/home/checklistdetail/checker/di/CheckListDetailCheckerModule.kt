@@ -30,6 +30,6 @@ abstract class CheckListDetailCheckerModule {
         @Provides
         fun provideService(
             retrofit: Retrofit
-        ) = retrofit.create(ICheckListDetailCheckerService::class.java)
+        ): ICheckListDetailCheckerService = retrofit.create(ICheckListDetailCheckerService::class.java)
     }
 }

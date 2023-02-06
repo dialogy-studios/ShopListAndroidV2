@@ -30,6 +30,6 @@ abstract class CategoryProductListModule {
         @Provides
         fun provideService(
             retrofit: Retrofit
-        ) = retrofit.create(ICategoryProductListService::class.java)
+        ): ICategoryProductListService = retrofit.create(ICategoryProductListService::class.java)
     }
 }

@@ -10,7 +10,7 @@ interface ICurrencyFormatter {
 class CurrencyFormatter @Inject constructor(): ICurrencyFormatter {
     override fun format(input: CurrencyVO): String {
         val value = input.value / input.factor
-        return "R$ ${value}"
+        return "R$ $value"
     }
 
 }

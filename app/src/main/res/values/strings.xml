@@ -6,4 +6,16 @@
     <string name="check_list_detail_deeplink">check_list_detail</string>
     <string name="category_detail_host">category_detail</string>
     <string name="see_more_products">Ver mais</string>
+    <string name="register_name_input_hint">Nome</string>
+    <string name="register_lastname_input_hint">Sobrenome</string>
+    <string name="register_email_input_hint">E-mail</string>
+    <string name="register_pwd_input_hint">Senha</string>
+    <string name="register_pwd_confirmation_input_hint">Confirmacao da senha</string>
+    <string name="register_password_constraint_1">Contém letras em maiusculo e minusculo</string>
+    <string name="register_password_constraint_2">Contém números</string>
+    <string name="register_password_constraint_3">Contém simbolos</string>
+    <string name="register_password_constraint_5">As senhas devem ser iguais</string>
+    <string name="register_next_button">Continuar</string>
+    <string name="register_password_constraint_4">Mais de 8 caracteres</string>
+    <string name="register_invalid_email">E-mail inválido</string>
 </resources>

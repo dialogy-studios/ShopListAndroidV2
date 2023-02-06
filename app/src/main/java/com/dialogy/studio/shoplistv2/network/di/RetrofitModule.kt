@@ -1,5 +1,6 @@
 package com.dialogy.studio.shoplistv2.network.di
 
+import com.dialogy.studio.shoplistv2.network.di.model.BASE_URL
 import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
@@ -27,5 +28,3 @@ class RetrofitModule {
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()
 }
-
-const val BASE_URL = "https://shop.list/"
