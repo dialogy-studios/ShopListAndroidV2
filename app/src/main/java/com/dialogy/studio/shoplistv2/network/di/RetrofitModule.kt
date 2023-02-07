@@ -24,7 +24,7 @@ class RetrofitModule {
     ): Retrofit =
         Retrofit.Builder()
             .client(client)
-            .baseUrl(BASE_URL)
             .addConverterFactory(MoshiConverterFactory.create(moshi))
+            .baseUrl(BASE_URL)
             .build()
 }

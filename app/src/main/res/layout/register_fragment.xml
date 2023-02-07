@@ -56,11 +56,28 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/phone_number_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/register_phone_number_hint"
+        app:layout_constraintTop_toBottomOf="@id/email_layout"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/phone_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/password_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/register_pwd_input_hint"
-        app:layout_constraintTop_toBottomOf="@id/email_layout"
+        app:layout_constraintTop_toBottomOf="@id/phone_number_layout"
         app:passwordToggleEnabled="true"
         >
 

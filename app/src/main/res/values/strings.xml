@@ -18,4 +18,6 @@
     <string name="register_next_button">Continuar</string>
     <string name="register_password_constraint_4">Mais de 8 caracteres</string>
     <string name="register_invalid_email">E-mail inválido</string>
+    <string name="register_invalid_phone_number">Telefone inválido</string>
+    <string name="register_phone_number_hint">Telefone</string>
 </resources>

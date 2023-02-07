@@ -2,7 +2,9 @@ package com.dialogy.studio.shoplistv2.authentication.register.presentation.model
 
 import com.dialogy.studio.shoplistv2.strings.extensions.isValidEmail
 import com.dialogy.studio.shoplistv2.strings.extensions.isValidPassword
+import com.squareup.moshi.JsonClass
 
+@JsonClass(generateAdapter = true)
 data class UserRegistrationInput(
     val email: String = "",
     val password: String = "",

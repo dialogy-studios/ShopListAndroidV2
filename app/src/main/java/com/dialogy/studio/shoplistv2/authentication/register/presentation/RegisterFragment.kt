@@ -10,7 +10,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.dialogy.studio.shoplistv2.R
 import com.dialogy.studio.shoplistv2.authentication.register.presentation.model.UserRegistrationInput
-import com.dialogy.studio.shoplistv2.constants.DeeplinkConstants
+import com.dialogy.studio.shoplistv2.components.textview.PhoneNumberTextWatcher
+import com.dialogy.studio.shoplistv2.constants.PhoneNumberSupport
 import com.dialogy.studio.shoplistv2.databinding.RegisterFragmentBinding
 import com.dialogy.studio.shoplistv2.strings.extensions.*
 import dagger.hilt.android.AndroidEntryPoint
@@ -45,19 +46,19 @@ class RegisterFragment : Fragment() {
     }
 
     private fun setupListeners() {
-        binding?.name?.doOnTextChanged { text, start, before, count ->
+        binding?.name?.doOnTextChanged { text, _, _, _ ->
             registrationPayload = registrationPayload.copy(
                 name= text?.toString().orEmpty()
             )
         }
 
-        binding?.lastname?.doOnTextChanged { text, start, before, count ->
+        binding?.lastname?.doOnTextChanged { text, _, _, _ ->
             registrationPayload = registrationPayload.copy(
                 lastname = text?.toString().orEmpty()
             )
         }
 
-        binding?.email?.doOnTextChanged { text, start, before, count ->
+        binding?.email?.doOnTextChanged { text, _, _, _ ->
             val email =  text?.toString().orEmpty().trim()
             registrationPayload = registrationPayload.copy(
                 email = email
@@ -65,7 +66,16 @@ class RegisterFragment : Fragment() {
             validateEmail(text?.trim() ?: "")
         }
 
-        binding?.password?.doOnTextChanged { text, start, before, count ->
+        binding?.phoneNumber?.apply {
+            addTextChangedListener(PhoneNumberTextWatcher(this, PhoneNumberSupport.PT_BR.pattern) { phoneNumber ->
+                registrationPayload = registrationPayload.copy(
+                    phoneNumber = phoneNumber.formatToPhoneNumber()
+                )
+                validatePhoneNumber(phoneNumber)
+            })
+        }
+
+        binding?.password?.doOnTextChanged { text, _, _, _ ->
             val password = text?.toString().orEmpty().trim()
             registrationPayload = registrationPayload.copy(
                 password = password
@@ -73,7 +83,7 @@ class RegisterFragment : Fragment() {
             validatePassword(password)
         }
 
-        binding?.passwordConfirm?.doOnTextChanged { text, start, before, count ->
+        binding?.passwordConfirm?.doOnTextChanged { text, _, _, _ ->
             val password = text?.toString().orEmpty().trim()
             val passwordAreEqual = password == registrationPayload.password
             binding?.passwordConstraint5?.setTextColor(
@@ -91,7 +101,6 @@ class RegisterFragment : Fragment() {
     }
 
     private fun validatePassword(password: String) {
-
         binding?.passwordConstraint1?.setTextColor(
             if (password.containLowerCase().not() || password.containUpperCase().not()) {
                 Color.RED
@@ -124,11 +133,20 @@ class RegisterFragment : Fragment() {
             }
         )
     }
+
     private fun validateEmail(email: CharSequence) {
         if (email.isValidEmail().not()) {
             binding?.emailLayout?.error = context?.getString(R.string.register_invalid_email)
         } else {
             binding?.emailLayout?.error = null
+        }
+    }
+
+    private fun validatePhoneNumber(phoneNumber: String) {
+        if (phoneNumber.isValidPhoneNumber().not()) {
+            binding?.phoneNumberLayout?.error = context?.getString(R.string.register_invalid_phone_number)
+        } else {
+            binding?.phoneNumberLayout?.error = null
         }
     }
 }
