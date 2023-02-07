@@ -2,6 +2,7 @@ package com.dialogy.studio.shoplistv2.authentication
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
 import com.dialogy.studio.shoplistv2.databinding.AuthenticationActivityBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -14,4 +15,5 @@ class AuthenticationActivity : AppCompatActivity() {
         binding = AuthenticationActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
+
 }

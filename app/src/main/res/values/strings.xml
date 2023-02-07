@@ -20,4 +20,10 @@
     <string name="register_invalid_email">E-mail inválido</string>
     <string name="register_invalid_phone_number">Telefone inválido</string>
     <string name="register_phone_number_hint">Telefone</string>
+    <string name="register_conflict_phone_number">Telefone já utilizado por outro usuário</string>
+    <string name="register_invalid_parameter">Dados incorretos. Verifique e tente novamente</string>
+    <string name="register_last_name_invalid">Sobrenome inválido. Verifique e tente novamente</string>
+    <string name="register_password_invalid">Senha inválida. Verifique e tente novamente</string>
+    <string name="register_username_already_exists">Já existe uma conta com o mesmo e-mail. Verifique e tente novamente</string>
+    <string name="register_unknown">Não foi possível prosseguir com o registro, tente novamente.</string>
 </resources>

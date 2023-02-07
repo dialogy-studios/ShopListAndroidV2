@@ -1,13 +1,13 @@
-package com.dialogy.studio.shoplistv2.authentication.register.presentation
+package com.dialogy.studio.shoplistv2.authentication.register.userinput.presentation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.dialogy.studio.shoplistv2.authentication.register.presentation.domain.RegisterErrorMapper
-import com.dialogy.studio.shoplistv2.authentication.register.presentation.domain.RegisterInteractor
-import com.dialogy.studio.shoplistv2.authentication.register.presentation.domain.model.RegistrationThrowable
-import com.dialogy.studio.shoplistv2.authentication.register.presentation.model.UserRegistrationInput
+import com.dialogy.studio.shoplistv2.authentication.register.userinput.domain.RegisterErrorMapper
+import com.dialogy.studio.shoplistv2.authentication.register.userinput.domain.RegisterInteractor
+import com.dialogy.studio.shoplistv2.authentication.register.userinput.domain.model.RegistrationThrowable
+import com.dialogy.studio.shoplistv2.authentication.register.userinput.presentation.model.UserRegistrationInput
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.launchIn
@@ -34,6 +34,7 @@ class RegisterViewModel @Inject constructor(
                     _state.value = RegisterViewModelState.Register.Success
                 }
                 .catch {
+                    val test = it.message
                     val errorId = try {
                         it as HttpException
                     } catch (exception: Exception) {

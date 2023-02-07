@@ -1,7 +1,7 @@
-package com.dialogy.studio.shoplistv2.authentication.register.presentation.domain
+package com.dialogy.studio.shoplistv2.authentication.register.userinput.domain
 
-import com.dialogy.studio.shoplistv2.authentication.register.presentation.data.RegisterRepository
-import com.dialogy.studio.shoplistv2.authentication.register.presentation.model.UserRegistrationInput
+import com.dialogy.studio.shoplistv2.authentication.register.userinput.data.RegisterRepository
+import com.dialogy.studio.shoplistv2.authentication.register.userinput.presentation.model.UserRegistrationInput
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.await

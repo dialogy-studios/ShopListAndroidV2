@@ -1,6 +1,6 @@
-package com.dialogy.studio.shoplistv2.authentication.register.presentation.data
+package com.dialogy.studio.shoplistv2.authentication.register.userinput.data
 
-import com.dialogy.studio.shoplistv2.authentication.register.presentation.model.UserRegistrationInput
+import com.dialogy.studio.shoplistv2.authentication.register.userinput.presentation.model.UserRegistrationInput
 import retrofit2.Call
 import javax.inject.Inject
 
