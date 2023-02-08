@@ -54,6 +54,7 @@ class RegisterFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = RegisterFragmentBinding.inflate(inflater)
+//        binding?.normalState?.continueBtn?.isEnabled = true
         setup()
         return binding?.root
     }
@@ -121,6 +122,7 @@ class RegisterFragment : Fragment() {
 
             continueBtn.setOnClickListener {
                 vm.sendRegisterRequest(registrationPayload)
+//                handleRegisterSuccess()
             }
         }
     }
@@ -140,6 +142,7 @@ class RegisterFragment : Fragment() {
     private fun handleRegisterSuccess() {
         binding?.viewFlipper?.displayedChild = NORMAL_STATE_LAYOUT
         findNavController().navigate(RegisterFragmentDirections.actionRegisterFragmentToRegisterConfirmFragment(registrationPayload.username))
+//        findNavController().navigate(RegisterFragmentDirections.actionRegisterFragmentToRegisterConfirmFragment("abc"))
     }
     private fun handleRegisterError(state: RegisterViewModel.RegisterViewModelState.Register.Error) {
         binding?.viewFlipper?.displayedChild = NORMAL_STATE_LAYOUT

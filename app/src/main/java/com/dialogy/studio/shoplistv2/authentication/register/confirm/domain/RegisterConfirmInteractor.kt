@@ -4,6 +4,7 @@ import com.dialogy.studio.shoplistv2.authentication.register.confirm.data.Regist
 import com.dialogy.studio.shoplistv2.authentication.register.confirm.presentation.model.RegisterConfirmInput
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import retrofit2.await
 import javax.inject.Inject
 
 interface RegisterConfirmInteractor  {
@@ -15,7 +16,7 @@ class RegisterConfirmInteractorImp @Inject constructor(
 ) : RegisterConfirmInteractor {
     override fun verify(payload: RegisterConfirmInput): Flow<Boolean> =
         flow {
-            val response = repository.verify(payload)
+            val response = repository.verify(payload).await()
             emit(true)
         }
 

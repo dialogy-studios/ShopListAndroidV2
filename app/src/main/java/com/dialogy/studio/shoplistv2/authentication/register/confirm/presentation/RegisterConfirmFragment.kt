@@ -34,6 +34,7 @@ class RegisterConfirmFragment : Fragment() {
             field = value
             if (value.confirmationCode.length == OTP_CODE_LENGTH) {
                 vm.verifyCode(payload)
+//                handleSuccessState()
             }
         }
 
@@ -86,7 +87,7 @@ class RegisterConfirmFragment : Fragment() {
         binding?.viewFlipper?.displayedChild  = LOADING_STATE_LAYOUT
     }
     private fun handleSuccessState() {
-        findNavController().popBackStack()
+        findNavController().popBackStack(R.id.loginFragment, false)
     }
 
     private fun handleErrorState(state: RegisterConfirmViewModel.State.Error) {

@@ -34,7 +34,6 @@ class RegisterViewModel @Inject constructor(
                     _state.value = RegisterViewModelState.Register.Success
                 }
                 .catch {
-                    val test = it.message
                     val errorId = try {
                         it as HttpException
                     } catch (exception: Exception) {
