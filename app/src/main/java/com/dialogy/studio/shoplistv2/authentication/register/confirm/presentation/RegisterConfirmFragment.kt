@@ -17,6 +17,7 @@ import com.dialogy.studio.shoplistv2.authentication.register.confirm.domain.mode
 import com.dialogy.studio.shoplistv2.authentication.register.confirm.presentation.model.RegisterConfirmInput
 import com.dialogy.studio.shoplistv2.databinding.RegisterConfirmBinding
 import com.dialogy.studio.shoplistv2.databinding.RegisterConfirmNormalBinding
+import com.dialogy.studio.shoplistv2.databinding.RegisterConfirmSuccessBinding
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -26,6 +27,7 @@ class RegisterConfirmFragment : Fragment() {
         private const val OTP_CODE_LENGTH = 6
         private const val NORMAL_STATE_LAYOUT = 0
         private const val LOADING_STATE_LAYOUT = 1
+        private const val SUCCESS_STATE_LAYOUT = 2
     }
 
     private val vm by viewModels<RegisterConfirmViewModel>()
@@ -34,7 +36,6 @@ class RegisterConfirmFragment : Fragment() {
             field = value
             if (value.confirmationCode.length == OTP_CODE_LENGTH) {
                 vm.verifyCode(payload)
-//                handleSuccessState()
             }
         }
 
@@ -42,10 +43,12 @@ class RegisterConfirmFragment : Fragment() {
         set(value) {
             if (value != null) {
                 normalState = value.normal
+                successState = value.success
             }
             field = value
         }
     private var normalState: RegisterConfirmNormalBinding? = null
+    private var successState: RegisterConfirmSuccessBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -87,7 +90,7 @@ class RegisterConfirmFragment : Fragment() {
         binding?.viewFlipper?.displayedChild  = LOADING_STATE_LAYOUT
     }
     private fun handleSuccessState() {
-        findNavController().popBackStack(R.id.loginFragment, false)
+        binding?.viewFlipper?.displayedChild  = SUCCESS_STATE_LAYOUT
     }
 
     private fun handleErrorState(state: RegisterConfirmViewModel.State.Error) {
@@ -117,6 +120,12 @@ class RegisterConfirmFragment : Fragment() {
                 payload = payload.copy(
                     confirmationCode = text.toString()
                 )
+            }
+        }
+
+        successState?.apply {
+            ctaToLogin.setOnClickListener {
+                findNavController().popBackStack(R.id.loginFragment, false)
             }
         }
     }

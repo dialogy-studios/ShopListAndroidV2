@@ -8,5 +8,6 @@
         android:layout_height="match_parent">
         <include android:id="@+id/normal" layout="@layout/register_confirm_normal" />
         <include android:id="@+id/loading" layout="@layout/register_confirm_loading" />
+        <include android:id="@+id/success" layout="@layout/register_confirm_success" />
     </ViewFlipper>
 </androidx.constraintlayout.widget.ConstraintLayout>
