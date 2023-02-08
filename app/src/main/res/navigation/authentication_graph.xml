@@ -20,7 +20,12 @@
             android:id="@+id/action_registerFragment_to_registerConfirmFragment"
             app:destination="@id/registerConfirmFragment"
             app:popUpTo="@id/registerFragment"
-            app:popUpToInclusive="false" />
+            app:popUpToInclusive="false">
+            <argument
+                android:name="username"
+                app:argType="string"
+                />
+        </action>
     </fragment>
     <fragment
         android:id="@+id/registerConfirmFragment"

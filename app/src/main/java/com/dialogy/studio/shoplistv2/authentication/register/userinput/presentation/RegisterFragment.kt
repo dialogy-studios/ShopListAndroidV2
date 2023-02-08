@@ -139,7 +139,7 @@ class RegisterFragment : Fragment() {
 
     private fun handleRegisterSuccess() {
         binding?.viewFlipper?.displayedChild = NORMAL_STATE_LAYOUT
-        findNavController().navigate(RegisterFragmentDirections.actionRegisterFragmentToRegisterConfirmFragment())
+        findNavController().navigate(RegisterFragmentDirections.actionRegisterFragmentToRegisterConfirmFragment(registrationPayload.username))
     }
     private fun handleRegisterError(state: RegisterViewModel.RegisterViewModelState.Register.Error) {
         binding?.viewFlipper?.displayedChild = NORMAL_STATE_LAYOUT
