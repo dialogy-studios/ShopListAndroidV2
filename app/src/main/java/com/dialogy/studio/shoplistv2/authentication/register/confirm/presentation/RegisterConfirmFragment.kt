@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -64,6 +65,7 @@ class RegisterConfirmFragment : Fragment() {
         setupListeners()
         setupPayload()
         setupObservers()
+        setupOnBackPress()
     }
 
     private fun setupPayload() {
@@ -114,6 +116,25 @@ class RegisterConfirmFragment : Fragment() {
         binding = null
     }
 
+    private fun setupOnBackPress() {
+        val dispatcher = activity?.onBackPressedDispatcher
+        val callback = object: OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                if (binding?.viewFlipper?.displayedChild == SUCCESS_STATE_LAYOUT) {
+                    return
+                }
+                findNavController().popBackStack()
+            }
+        }
+
+        findNavController().setLifecycleOwner(viewLifecycleOwner)
+
+        dispatcher?.let {
+            it.addCallback(callback)
+            findNavController().setOnBackPressedDispatcher(it)
+
+        }
+    }
     private fun setupListeners() {
         normalState?.apply {
             pinView.doOnTextChanged { text, start, before, count ->

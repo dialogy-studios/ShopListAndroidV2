@@ -134,6 +134,7 @@ class RegisterFragment : Fragment() {
             is RegisterViewModel.RegisterViewModelState.Register.Success -> handleRegisterSuccess()
             is RegisterViewModel.RegisterViewModelState.Register.Error -> handleRegisterError(state)
             is RegisterViewModel.RegisterViewModelState.Register.Loading -> handleRegisterLoading()
+            is RegisterViewModel.RegisterViewModelState.Idle -> {}
         }
     }
 

@@ -32,6 +32,7 @@ class RegisterViewModel @Inject constructor(
                 .onStart { _state.value = RegisterViewModelState.Register.Loading }
                 .mapLatest {
                     _state.value = RegisterViewModelState.Register.Success
+                    _state.value =  RegisterViewModelState.Idle
                 }
                 .catch {
                     val errorId = try {
@@ -41,6 +42,7 @@ class RegisterViewModel @Inject constructor(
                     }?.response()?.errorBody()?.string().orEmpty()
                     val error = errorMapper.map(errorId)
                     _state.value = RegisterViewModelState.Register.Error(error)
+                    _state.value =  RegisterViewModelState.Idle
                 }
                 .launchIn(viewModelScope)
         }
@@ -52,6 +54,7 @@ class RegisterViewModel @Inject constructor(
             data class Error(val error: RegistrationThrowable) : Register()
             object Success : Register()
         }
+        object Idle: RegisterViewModelState()
     }
 
     sealed class RegisterViewModelEvent {
