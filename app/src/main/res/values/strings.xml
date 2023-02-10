@@ -35,4 +35,12 @@
     <string name="login_password_hint">Senha</string>
     <string name="login_btn_text">Login</string>
     <string name="register_btn_txt">Registro</string>
+    <string name="login_input_username_exception">Usuário inválido ou não encontrado</string>
+    <string name="login_input_password_exception">Senha inválida</string>
+    <string name="login_input_not_authorized">Não autorizado</string>
+    <string name="login_input_unknown">Erro desconhecido. Tente novamente.</string>
+    <string name="login_confirm_username_invalid">Usuário inválido</string>
+    <string name="login_confirmation_code_invalid">Código inválido</string>
+    <string name="login_confirm_code_expired">Código expirado</string>
+    <string name="login_confirm_unknown_error">Erro desconhecido. Tente novamente.</string>
 </resources>
