@@ -1,11 +1,17 @@
 package com.dialogy.studio.shoplistv2.authentication.register.confirm.presentation
 
+import android.content.Context
+import android.content.Context.INPUT_METHOD_SERVICE
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
+import android.view.inputmethod.InputMethodManager.SHOW_IMPLICIT
+import android.widget.EditText
 import androidx.activity.OnBackPressedCallback
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -32,6 +38,14 @@ class RegisterConfirmFragment : Fragment() {
     }
 
     private val vm by viewModels<RegisterConfirmViewModel>()
+    private var onBackpressedCallback = object: OnBackPressedCallback(true) {
+        override fun handleOnBackPressed() {
+            if (binding?.viewFlipper?.displayedChild == SUCCESS_STATE_LAYOUT) {
+                return
+            }
+            findNavController().popBackStack()
+        }
+    }
     private var payload = RegisterConfirmInput()
         set(value) {
             field = value
@@ -58,7 +72,15 @@ class RegisterConfirmFragment : Fragment() {
     ): View? {
         binding = RegisterConfirmBinding.inflate(inflater)
         setup()
+        normalState?.pinView?.showUpKeyboard()
         return binding?.root
+    }
+
+    fun EditText.showUpKeyboard() {
+        if (this.requestFocus()) {
+            val inputManager = activity?.getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+            inputManager.showSoftInput(this, SHOW_IMPLICIT)
+        }
     }
 
     private fun setup() {
@@ -114,27 +136,22 @@ class RegisterConfirmFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null
+        onBackpressedCallback.isEnabled = false
     }
 
     private fun setupOnBackPress() {
         val dispatcher = activity?.onBackPressedDispatcher
-        val callback = object: OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                if (binding?.viewFlipper?.displayedChild == SUCCESS_STATE_LAYOUT) {
-                    return
-                }
-                findNavController().popBackStack()
-            }
-        }
-
-        findNavController().setLifecycleOwner(viewLifecycleOwner)
-
         dispatcher?.let {
-            it.addCallback(callback)
+            it.addCallback(onBackpressedCallback)
             findNavController().setOnBackPressedDispatcher(it)
-
         }
     }
+
+    override fun onResume() {
+        super.onResume()
+        setupOnBackPress()
+    }
+
     private fun setupListeners() {
         normalState?.apply {
             pinView.doOnTextChanged { text, start, before, count ->

@@ -91,12 +91,11 @@ class RegisterFragment : Fragment() {
             }
 
             phoneNumber.apply {
-                addTextChangedListener(PhoneNumberTextWatcher(this, PhoneNumberSupport.PT_BR.pattern) { phoneNumber ->
+                doOnTextChanged { text, start, before, count ->
                     registrationPayload = registrationPayload.copy(
-                        phoneNumber = phoneNumber.formatToPhoneNumber()
+                        phoneNumber = text.toString().formatToPhoneNumber()
                     )
-                    validatePhoneNumber(phoneNumber)
-                })
+                }
             }
 
             password.doOnTextChanged { text, _, _, _ ->
