@@ -7,11 +7,19 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.dialogy.studio.shoplistv2.databinding.LoginFragmentBinding
+import com.dialogy.studio.shoplistv2.databinding.LoginNormalBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class LoginFragment : Fragment() {
     private var binding: LoginFragmentBinding? = null
+        set(value) {
+            field = value
+            if (value != null) {
+                normalState = value.normal
+            }
+        }
+    private var normalState: LoginNormalBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,7 +41,7 @@ class LoginFragment : Fragment() {
     }
 
     private fun setupListeners() {
-        binding?.registerBtn?.setOnClickListener {
+        normalState?.registerBtn?.setOnClickListener {
             findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToRegisterFragment())
         }
     }

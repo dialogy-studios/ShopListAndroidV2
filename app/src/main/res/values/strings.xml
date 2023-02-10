@@ -29,4 +29,10 @@
     <string name="register_confirm_code_mismatch">Código inválido</string>
     <string name="register_confirm_expired_code">Código expirado</string>
     <string name="register_confirm_unknown">Algo deu errado. Tente novamente</string>
+    <string name="app_title">Shop List</string>
+    <string name="app_slogan">Organize e faça suas compras, simples e rápido</string>
+    <string name="login_username_hint">E-mail</string>
+    <string name="login_password_hint">Senha</string>
+    <string name="login_btn_text">Login</string>
+    <string name="register_btn_txt">Registro</string>
 </resources>
