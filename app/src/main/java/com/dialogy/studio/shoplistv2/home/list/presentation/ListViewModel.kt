@@ -20,12 +20,12 @@ class ListViewModel @Inject constructor(
     private val _state = MutableLiveData<State>(State.UI.Idle)
     val state: LiveData<State> = _state
 
-    fun fetchList() {
+    fun fetchList(authorization: String) {
         viewModelScope.launch {
             try {
                 _state.value = State.UI.Loading
                 interactor
-                    .fetchList()
+                    .fetchList(authorization)
                     .collect {
                         _state.value = State.UI.Success(it)
                     }

@@ -14,7 +14,7 @@ import retrofit2.await
 import javax.inject.Inject
 
 interface IListInteractor {
-    suspend fun fetchList(): Flow<List<CategoryVerticalListVO>>
+    suspend fun fetchList(authorization: String): Flow<List<CategoryVerticalListVO>>
 }
 
 class ListInteractor @Inject constructor(
@@ -22,9 +22,9 @@ class ListInteractor @Inject constructor(
     private val dispatchers: ShopListDispatchers,
     private val verticalCategoryListMapper: IVerticalCategoryListMapper
 ) : IListInteractor {
-    override suspend fun fetchList(): Flow<List<CategoryVerticalListVO>> = withContext(dispatchers.io) {
+    override suspend fun fetchList(authorization: String): Flow<List<CategoryVerticalListVO>> = withContext(dispatchers.io) {
         flow {
-            val response = repository.getList().await()
+            val response = repository.getList(authorization).await()
             val categoryListVO = verticalCategoryListMapper.map(response?.categoryList)
             emit(categoryListVO)
         }

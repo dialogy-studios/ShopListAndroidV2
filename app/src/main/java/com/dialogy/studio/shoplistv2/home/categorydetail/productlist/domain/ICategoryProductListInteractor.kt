@@ -11,7 +11,7 @@ import retrofit2.await
 import javax.inject.Inject
 
 interface ICategoryProductListInteractor {
-    fun fetchProductList(categoryId: String) : Flow<CategoryProductListVO>
+    fun fetchProductList(categoryId: String, page: Int, authorization: String) : Flow<CategoryProductListVO>
 }
 
 class CategoryProductListInteractor @Inject constructor (
@@ -19,8 +19,8 @@ class CategoryProductListInteractor @Inject constructor (
     private val repository : ICategoryProductListRepository,
     private val categoryProductListMapper: ICategoryProductListMapper
 ) : ICategoryProductListInteractor {
-    override fun fetchProductList(categoryId: String): Flow<CategoryProductListVO> = flow {
-        val data = repository.fetchProductList(categoryId).await()
+    override fun fetchProductList(categoryId: String, page: Int, authorization: String): Flow<CategoryProductListVO> = flow {
+        val data = repository.fetchProductList(categoryId, page, authorization).await()
         val vo = categoryProductListMapper.map(data)
         emit(vo)
     }.flowOn(dispatchers.io)

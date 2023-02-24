@@ -5,13 +5,13 @@ import retrofit2.Call
 import javax.inject.Inject
 
 interface ICategoryProductListRepository {
-    suspend fun fetchProductList(categoryId: String): Call<CategoryProductListResponse?>
+    suspend fun fetchProductList(categoryId: String, page: Int, authorization: String): Call<CategoryProductListResponse?>
 }
 
 class CategoryProductListRepository @Inject constructor(
     private val service: ICategoryProductListService
 ) : ICategoryProductListRepository {
-    override suspend fun fetchProductList(categoryId: String): Call<CategoryProductListResponse?> =
-        service.getProductList(categoryId)
+    override suspend fun fetchProductList(categoryId: String, page: Int, authorization: String): Call<CategoryProductListResponse?> =
+        service.getProductList(categoryId, page, authorization)
 
 }

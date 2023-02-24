@@ -1,5 +1,7 @@
 package com.dialogy.studio.shoplistv2.authentication.login.confirm.presentation
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,6 +14,8 @@ import androidx.lifecycle.Observer
 import com.dialogy.studio.shoplistv2.R
 import com.dialogy.studio.shoplistv2.authentication.login.confirm.domain.model.*
 import com.dialogy.studio.shoplistv2.authentication.login.confirm.presentation.model.LoginConfirmInput
+import com.dialogy.studio.shoplistv2.constants.AUTHENTICATION_SHARED_PREFERENCES_KEY
+import com.dialogy.studio.shoplistv2.constants.AUTHORIZATION_KEY
 import com.dialogy.studio.shoplistv2.constants.DeeplinkConstants
 import com.dialogy.studio.shoplistv2.databinding.LoginConfirmFragmentBinding
 import com.dialogy.studio.shoplistv2.databinding.LoginConfirmNormalBinding
@@ -79,7 +83,7 @@ class LoginConfirmFragment : Fragment() {
         when (newState) {
             is LoginConfirmViewModel.State.Loading -> handleLoading()
             is LoginConfirmViewModel.State.Error -> handleError(newState.throwable)
-            is LoginConfirmViewModel.State.Success -> handleSuccess()
+            is LoginConfirmViewModel.State.Success -> handleSuccess(newState.authToken)
             is LoginConfirmViewModel.State.Idle -> handleIdle()
         }
     }
@@ -104,7 +108,11 @@ class LoginConfirmFragment : Fragment() {
         }
     }
 
-    private fun handleSuccess() {
+    private fun handleSuccess(authToken: String) {
+        activity?.getSharedPreferences(AUTHENTICATION_SHARED_PREFERENCES_KEY, Context.MODE_PRIVATE)?.edit()?.apply {
+            putString(AUTHORIZATION_KEY, authToken)
+            apply()
+        }
         DeeplinkConstants.HOME.emit(requireContext())
         activity?.finish()
     }

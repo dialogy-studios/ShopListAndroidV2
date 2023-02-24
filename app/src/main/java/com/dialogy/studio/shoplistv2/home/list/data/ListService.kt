@@ -4,9 +4,11 @@ import com.dialogy.studio.shoplistv2.home.list.data.response.GetCategoryWithProd
 import io.github.brunogabriel.mockpinterceptor.MOCK
 import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.Header
 
 interface ListService {
-    @GET("https://google.com")
-    @MOCK("fetch-list.json")
-    fun getData(): Call<GetCategoryWithProductListResponse?>
+    @GET("/departmentsWithProducts")
+    fun getData(
+        @Header("Authorization") authorization: String
+    ): Call<GetCategoryWithProductListResponse?>
 }

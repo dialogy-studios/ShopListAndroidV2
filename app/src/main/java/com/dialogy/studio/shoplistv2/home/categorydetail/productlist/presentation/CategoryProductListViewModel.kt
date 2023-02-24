@@ -1,6 +1,5 @@
 package com.dialogy.studio.shoplistv2.home.categorydetail.productlist.presentation
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -9,7 +8,6 @@ import com.dialogy.studio.shoplistv2.home.categorydetail.productlist.domain.ICat
 import com.dialogy.studio.shoplistv2.home.categorydetail.productlist.presentation.component.list.model.CategoryProductListVO
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
@@ -19,9 +17,10 @@ class CategoryProductListViewModel @Inject constructor(
 
     private val _state: MutableLiveData<CategoryProductListState> = MutableLiveData()
     val state: LiveData<CategoryProductListState> = _state
+    private val _page: MutableLiveData<Int> = MutableLiveData(1)
 
-    fun fetchProductList(categoryId: String) {
-        interactor.fetchProductList(categoryId)
+    fun fetchProductList(categoryId: String, authorization: String) {
+        interactor.fetchProductList(categoryId, _page.value ?: 1, authorization)
             .onStart {
                 _state.value = CategoryProductListState.UI.Loading
             }

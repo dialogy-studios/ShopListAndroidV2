@@ -1,11 +1,14 @@
 package com.dialogy.studio.shoplistv2.home.list.presentation
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.dialogy.studio.shoplistv2.constants.AUTHENTICATION_SHARED_PREFERENCES_KEY
+import com.dialogy.studio.shoplistv2.constants.AUTHORIZATION_KEY
 import com.dialogy.studio.shoplistv2.constants.DeeplinkConstants
 import com.dialogy.studio.shoplistv2.databinding.ListFragmentBinding
 import com.dialogy.studio.shoplistv2.home.list.presentation.component.verticalcategorylist.VerticalCategoryListRVAdapter
@@ -18,6 +21,11 @@ import dagger.hilt.android.AndroidEntryPoint
 class ListFragment : Fragment() {
     var binding : ListFragmentBinding? = null
     val vm: ListViewModel by viewModels()
+    val authorization: String by lazy {
+        context?.getSharedPreferences(AUTHENTICATION_SHARED_PREFERENCES_KEY, Context.MODE_PRIVATE)?.getString(
+            AUTHORIZATION_KEY, ""
+        ).orEmpty()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -61,7 +69,7 @@ class ListFragment : Fragment() {
     }
 
     private fun fetchList() {
-        vm.fetchList()
+        vm.fetchList(authorization)
     }
 
     private fun renderCategoryList(verticalCategoryList: List<CategoryVerticalListVO>) {
@@ -77,7 +85,6 @@ class ListFragment : Fragment() {
                                 )
                             }
                         }
-
                 }
             )
         }.let {
