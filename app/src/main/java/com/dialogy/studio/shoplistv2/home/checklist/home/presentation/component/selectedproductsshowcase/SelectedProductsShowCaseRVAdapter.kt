@@ -1,4 +1,4 @@
-package com.dialogy.studio.shoplistv2.home.checklist.presentation.component.selectedproductsshowcase
+package com.dialogy.studio.shoplistv2.home.checklist.home.presentation.component.selectedproductsshowcase
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

@@ -1,11 +1,11 @@
-package com.dialogy.studio.shoplistv2.home.checklist.presentation
+package com.dialogy.studio.shoplistv2.home.checklist.home.presentation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.dialogy.studio.shoplistv2.home.checklist.domain.ICheckListInteractor
-import com.dialogy.studio.shoplistv2.home.checklist.presentation.component.list.model.CheckListVO
+import com.dialogy.studio.shoplistv2.home.checklist.home.domain.ICheckListInteractor
+import com.dialogy.studio.shoplistv2.home.checklist.home.presentation.component.list.model.CheckListVO
 import com.dialogy.studio.shoplistv2.network.di.model.ShopListDispatchers
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*

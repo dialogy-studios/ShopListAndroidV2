@@ -43,4 +43,5 @@
     <string name="login_confirmation_code_invalid">Código inválido</string>
     <string name="login_confirm_code_expired">Código expirado</string>
     <string name="login_confirm_unknown_error">Erro desconhecido. Tente novamente.</string>
+    <string name="create_list">Criar lista</string>
 </resources>

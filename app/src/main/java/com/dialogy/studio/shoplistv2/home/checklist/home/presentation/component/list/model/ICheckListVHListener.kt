@@ -1,4 +1,4 @@
-package com.dialogy.studio.shoplistv2.home.checklist.presentation.component.list.model
+package com.dialogy.studio.shoplistv2.home.checklist.home.presentation.component.list.model
 
 interface ICheckListVHListener {
     val cardListener: ICardListener

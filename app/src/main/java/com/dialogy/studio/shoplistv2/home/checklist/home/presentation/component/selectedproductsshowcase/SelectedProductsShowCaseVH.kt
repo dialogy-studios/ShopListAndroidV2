@@ -1,4 +1,4 @@
-package com.dialogy.studio.shoplistv2.home.checklist.presentation.component.selectedproductsshowcase
+package com.dialogy.studio.shoplistv2.home.checklist.home.presentation.component.selectedproductsshowcase
 
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide

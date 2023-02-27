@@ -1,4 +1,4 @@
-package com.dialogy.studio.shoplistv2.home.checklist.data.model
+package com.dialogy.studio.shoplistv2.home.checklist.home.data.model
 
 data class CheckListResponse(
     val title: String? = null,

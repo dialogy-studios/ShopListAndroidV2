@@ -1,4 +1,4 @@
-package com.dialogy.studio.shoplistv2.home.checklist.presentation
+package com.dialogy.studio.shoplistv2.home.checklist.home.presentation
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,10 +8,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.dialogy.studio.shoplistv2.constants.DeeplinkConstants
 import com.dialogy.studio.shoplistv2.databinding.ChecklistFragmentBinding
-import com.dialogy.studio.shoplistv2.home.checklist.presentation.component.list.CheckListRVAdapter
-import com.dialogy.studio.shoplistv2.home.checklist.presentation.component.list.model.CheckListVO
-import com.dialogy.studio.shoplistv2.home.checklist.presentation.component.list.model.ICardListener
-import com.dialogy.studio.shoplistv2.home.checklist.presentation.component.list.model.ICheckListVHListener
+import com.dialogy.studio.shoplistv2.home.checklist.home.presentation.component.list.CheckListRVAdapter
+import com.dialogy.studio.shoplistv2.home.checklist.home.presentation.component.list.model.CheckListVO
+import com.dialogy.studio.shoplistv2.home.checklist.home.presentation.component.list.model.ICardListener
+import com.dialogy.studio.shoplistv2.home.checklist.home.presentation.component.list.model.ICheckListVHListener
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -70,7 +70,8 @@ class CheckListFragment : Fragment() {
     }
 
     private fun handleSuccessState(state: CheckListViewModel.State.UI.Success) {
-        binding?.checkListRv?.adapter = CheckListRVAdapter(state.screenVO, object: ICheckListVHListener {
+        binding?.checkListRv?.adapter = CheckListRVAdapter(state.screenVO, object:
+            ICheckListVHListener {
             override val cardListener: ICardListener
                 get() = object: ICardListener {
                     override fun onClick(vo: CheckListVO) {

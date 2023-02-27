@@ -18,6 +18,6 @@
         android:label="ProfileFragment" />
     <fragment
         android:id="@+id/myListFragment"
-        android:name="com.dialogy.studio.shoplistv2.home.checklist.presentation.CheckListFragment"
+        android:name="com.dialogy.studio.shoplistv2.home.checklist.home.presentation.CheckListFragment"
         android:label="MyListFragment" />
 </navigation>

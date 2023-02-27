@@ -1,8 +1,8 @@
-package com.dialogy.studio.shoplistv2.home.checklist.domain
+package com.dialogy.studio.shoplistv2.home.checklist.home.domain
 
-import com.dialogy.studio.shoplistv2.home.checklist.data.ICheckListRepository
-import com.dialogy.studio.shoplistv2.home.checklist.domain.mapper.ICheckListComponentRVMapper
-import com.dialogy.studio.shoplistv2.home.checklist.presentation.component.list.model.CheckListVO
+import com.dialogy.studio.shoplistv2.home.checklist.home.data.ICheckListRepository
+import com.dialogy.studio.shoplistv2.home.checklist.home.domain.mapper.ICheckListComponentRVMapper
+import com.dialogy.studio.shoplistv2.home.checklist.home.presentation.component.list.model.CheckListVO
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.await

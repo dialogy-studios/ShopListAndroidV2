@@ -1,11 +1,11 @@
-package com.dialogy.studio.shoplistv2.home.checklist.presentation.component.list
+package com.dialogy.studio.shoplistv2.home.checklist.home.presentation.component.list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.dialogy.studio.shoplistv2.databinding.CheckListItemVhBinding
-import com.dialogy.studio.shoplistv2.home.checklist.presentation.component.list.model.CheckListVO
-import com.dialogy.studio.shoplistv2.home.checklist.presentation.component.list.model.ICheckListVHListener
+import com.dialogy.studio.shoplistv2.home.checklist.home.presentation.component.list.model.CheckListVO
+import com.dialogy.studio.shoplistv2.home.checklist.home.presentation.component.list.model.ICheckListVHListener
 
 class CheckListRVAdapter(
     private val data: List<CheckListVO>,

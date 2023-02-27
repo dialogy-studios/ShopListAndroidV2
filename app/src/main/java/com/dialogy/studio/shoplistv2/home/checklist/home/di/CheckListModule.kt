@@ -1,12 +1,12 @@
-package com.dialogy.studio.shoplistv2.home.checklist.di
+package com.dialogy.studio.shoplistv2.home.checklist.home.di
 
-import com.dialogy.studio.shoplistv2.home.checklist.data.CheckListRepository
-import com.dialogy.studio.shoplistv2.home.checklist.data.ICheckListRepository
-import com.dialogy.studio.shoplistv2.home.checklist.data.ICheckListService
-import com.dialogy.studio.shoplistv2.home.checklist.domain.CheckListInteractor
-import com.dialogy.studio.shoplistv2.home.checklist.domain.ICheckListInteractor
-import com.dialogy.studio.shoplistv2.home.checklist.domain.mapper.CheckListComponentRVMapper
-import com.dialogy.studio.shoplistv2.home.checklist.domain.mapper.ICheckListComponentRVMapper
+import com.dialogy.studio.shoplistv2.home.checklist.home.data.CheckListRepository
+import com.dialogy.studio.shoplistv2.home.checklist.home.data.ICheckListRepository
+import com.dialogy.studio.shoplistv2.home.checklist.home.data.ICheckListService
+import com.dialogy.studio.shoplistv2.home.checklist.home.domain.CheckListInteractor
+import com.dialogy.studio.shoplistv2.home.checklist.home.domain.ICheckListInteractor
+import com.dialogy.studio.shoplistv2.home.checklist.home.domain.mapper.CheckListComponentRVMapper
+import com.dialogy.studio.shoplistv2.home.checklist.home.domain.mapper.ICheckListComponentRVMapper
 import dagger.Binds
 import dagger.Module
 import dagger.Provides

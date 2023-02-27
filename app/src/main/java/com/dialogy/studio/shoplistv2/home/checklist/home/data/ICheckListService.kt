@@ -1,6 +1,6 @@
-package com.dialogy.studio.shoplistv2.home.checklist.data
+package com.dialogy.studio.shoplistv2.home.checklist.home.data
 
-import com.dialogy.studio.shoplistv2.home.checklist.data.model.CheckListResponse
+import com.dialogy.studio.shoplistv2.home.checklist.home.data.model.CheckListResponse
 import io.github.brunogabriel.mockpinterceptor.MOCK
 import retrofit2.Call
 import retrofit2.http.GET
