@@ -1,10 +1,9 @@
 package com.dialogy.studio.shoplistv2.network.di
 
-import com.dialogy.studio.shoplistv2.network.di.model.ShopListDispatchers
+import com.dialogy.studio.shoplistv2.network.model.ShopListDispatchers
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ActivityComponent
 import dagger.hilt.android.components.ViewModelComponent
 import kotlinx.coroutines.Dispatchers
 

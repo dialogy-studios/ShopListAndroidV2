@@ -8,7 +8,5 @@ import retrofit2.http.Header
 
 interface ListService {
     @GET("/departmentsWithProducts")
-    fun getData(
-        @Header("Authorization") authorization: String
-    ): Call<GetCategoryWithProductListResponse?>
+    fun getData(): Call<GetCategoryWithProductListResponse?>
 }

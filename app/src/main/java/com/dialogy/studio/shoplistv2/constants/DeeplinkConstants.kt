@@ -23,6 +23,10 @@ object DeeplinkConstants {
         }
     }
 
+    object CHECK_LIST_NEW {
+        fun emit(context: Context) = emitDeeplink(context, "${getScheme(context)}://${context.getString(R.string.check_list_host)}${context.getString(R.string.check_list_new_path)}")
+    }
+
     object HOME {
         fun emit(context: Context) = emitDeeplink(context, "${getScheme(context)}://home")
     }

@@ -21,11 +21,6 @@ import dagger.hilt.android.AndroidEntryPoint
 class ListFragment : Fragment() {
     var binding : ListFragmentBinding? = null
     val vm: ListViewModel by viewModels()
-    val authorization: String by lazy {
-        context?.getSharedPreferences(AUTHENTICATION_SHARED_PREFERENCES_KEY, Context.MODE_PRIVATE)?.getString(
-            AUTHORIZATION_KEY, ""
-        ).orEmpty()
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -69,7 +64,7 @@ class ListFragment : Fragment() {
     }
 
     private fun fetchList() {
-        vm.fetchList(authorization)
+        vm.fetchList()
     }
 
     private fun renderCategoryList(verticalCategoryList: List<CategoryVerticalListVO>) {

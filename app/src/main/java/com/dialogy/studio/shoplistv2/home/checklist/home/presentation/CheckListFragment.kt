@@ -42,7 +42,11 @@ class CheckListFragment : Fragment() {
     }
 
     private fun setupListeners() {
-
+        binding?.newCheckListBtn?.setOnClickListener {
+            context?.let {
+                DeeplinkConstants.CHECK_LIST_NEW.emit(it)
+            }
+        }
     }
 
     private fun setupObservers() {

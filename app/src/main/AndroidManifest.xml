@@ -92,6 +92,23 @@
                     />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".home.checklist.new_check_list.NewCheckListActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Material3.Light.NoActionBar"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="@string/app_scheme"
+                    android:host="@string/check_list_host"
+                    android:path="@string/check_list_new_path"
+                    />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

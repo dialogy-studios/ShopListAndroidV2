@@ -2,16 +2,15 @@ package com.dialogy.studio.shoplistv2.home.categorydetail.productlist.domain
 
 import com.dialogy.studio.shoplistv2.home.categorydetail.productlist.data.ICategoryProductListRepository
 import com.dialogy.studio.shoplistv2.home.categorydetail.productlist.presentation.component.list.model.CategoryProductListVO
-import com.dialogy.studio.shoplistv2.network.di.model.ShopListDispatchers
+import com.dialogy.studio.shoplistv2.network.model.ShopListDispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
-import kotlinx.coroutines.withContext
 import retrofit2.await
 import javax.inject.Inject
 
 interface ICategoryProductListInteractor {
-    fun fetchProductList(categoryId: String, page: Int, authorization: String) : Flow<CategoryProductListVO>
+    fun fetchProductList(categoryId: String, page: Int) : Flow<CategoryProductListVO>
 }
 
 class CategoryProductListInteractor @Inject constructor (
@@ -19,8 +18,8 @@ class CategoryProductListInteractor @Inject constructor (
     private val repository : ICategoryProductListRepository,
     private val categoryProductListMapper: ICategoryProductListMapper
 ) : ICategoryProductListInteractor {
-    override fun fetchProductList(categoryId: String, page: Int, authorization: String): Flow<CategoryProductListVO> = flow {
-        val data = repository.fetchProductList(categoryId, page, authorization).await()
+    override fun fetchProductList(categoryId: String, page: Int): Flow<CategoryProductListVO> = flow {
+        val data = repository.fetchProductList(categoryId, page).await()
         val vo = categoryProductListMapper.map(data)
         emit(vo)
     }.flowOn(dispatchers.io)

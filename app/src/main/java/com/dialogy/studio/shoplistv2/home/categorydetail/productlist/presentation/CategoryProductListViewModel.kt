@@ -19,8 +19,8 @@ class CategoryProductListViewModel @Inject constructor(
     val state: LiveData<CategoryProductListState> = _state
     private val _page: MutableLiveData<Int> = MutableLiveData(1)
 
-    fun fetchProductList(categoryId: String, authorization: String) {
-        interactor.fetchProductList(categoryId, _page.value ?: 1, authorization)
+    fun fetchProductList(categoryId: String) {
+        interactor.fetchProductList(categoryId, _page.value ?: 1)
             .onStart {
                 _state.value = CategoryProductListState.UI.Loading
             }

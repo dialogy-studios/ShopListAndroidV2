@@ -1,6 +1,6 @@
 package com.dialogy.studio.shoplistv2.network.di
 
-import com.dialogy.studio.shoplistv2.network.di.model.BASE_URL
+import com.dialogy.studio.shoplistv2.network.model.BASE_URL
 import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides

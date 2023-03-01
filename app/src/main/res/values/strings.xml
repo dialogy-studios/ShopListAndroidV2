@@ -5,6 +5,8 @@
     <string name="home_deeplink">home</string>
     <string name="check_list_detail_deeplink">check_list_detail</string>
     <string name="category_detail_host">category_detail</string>
+    <string name="check_list_host">check-list</string>
+    <string name="check_list_new_path">/new</string>
     <string name="see_more_products">Ver mais</string>
     <string name="register_name_input_hint">Nome</string>
     <string name="register_lastname_input_hint">Sobrenome</string>

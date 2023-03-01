@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dialogy.studio.shoplistv2.home.checklist.home.domain.ICheckListInteractor
 import com.dialogy.studio.shoplistv2.home.checklist.home.presentation.component.list.model.CheckListVO
-import com.dialogy.studio.shoplistv2.network.di.model.ShopListDispatchers
+import com.dialogy.studio.shoplistv2.network.model.ShopListDispatchers
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
 import javax.inject.Inject

@@ -2,9 +2,8 @@ package com.dialogy.studio.shoplistv2.home.checklistdetail.checker.domain
 
 import com.dialogy.studio.shoplistv2.home.checklistdetail.checker.data.ICheckListDetailCheckerRepository
 import com.dialogy.studio.shoplistv2.home.checklistdetail.checker.domain.mapper.ICheckListDetailCheckerMapper
-import com.dialogy.studio.shoplistv2.home.checklistdetail.checker.presentation.components.selectedproductsrv.model.CheckListDetailCheckerVO
 import com.dialogy.studio.shoplistv2.home.checklistdetail.checker.presentation.model.CheckListDetailCheckerScreenVO
-import com.dialogy.studio.shoplistv2.network.di.model.ShopListDispatchers
+import com.dialogy.studio.shoplistv2.network.model.ShopListDispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn

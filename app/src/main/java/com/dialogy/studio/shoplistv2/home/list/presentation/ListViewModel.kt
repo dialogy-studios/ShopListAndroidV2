@@ -5,9 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dialogy.studio.shoplistv2.home.list.domain.IListInteractor
-import com.dialogy.studio.shoplistv2.home.list.presentation.component.horizontalproductlist.ProductListVO
 import com.dialogy.studio.shoplistv2.home.list.presentation.component.verticalcategorylist.model.CategoryVerticalListVO
-import com.dialogy.studio.shoplistv2.network.di.model.ShopListDispatchers
+import com.dialogy.studio.shoplistv2.network.model.ShopListDispatchers
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -20,12 +19,12 @@ class ListViewModel @Inject constructor(
     private val _state = MutableLiveData<State>(State.UI.Idle)
     val state: LiveData<State> = _state
 
-    fun fetchList(authorization: String) {
+    fun fetchList() {
         viewModelScope.launch {
             try {
                 _state.value = State.UI.Loading
                 interactor
-                    .fetchList(authorization)
+                    .fetchList()
                     .collect {
                         _state.value = State.UI.Success(it)
                     }

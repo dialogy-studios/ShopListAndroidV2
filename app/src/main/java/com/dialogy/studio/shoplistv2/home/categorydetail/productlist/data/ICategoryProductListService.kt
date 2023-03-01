@@ -15,7 +15,5 @@ interface ICategoryProductListService {
         categoryId: String,
         @Query(value="page")
         page: Int,
-        @Header("Authorization")
-        authorization: String
     ): Call<CategoryProductListResponse?>
 }

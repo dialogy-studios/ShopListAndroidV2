@@ -1,4 +1,4 @@
-package com.dialogy.studio.shoplistv2.network.di.model
+package com.dialogy.studio.shoplistv2.network.model
 
 import kotlinx.coroutines.CoroutineDispatcher
 
